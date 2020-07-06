@@ -1,4 +1,45 @@
+function processSpecialDay(special_day) {
+    var day = special_day.substring(4, 6);
+    var month = special_day.substring(0, 3);
+    
+    var converted_day, converted_month;
 
+    // Converting day
+
+    if (day.charAt(1) == " ") 
+        converted_day = "0" + day.charAt(0);
+    else
+        converted_day = day;
+
+    // Converting month  
+
+    if (month == "Jan")
+        converted_month = "01";
+    else if (month == "Feb")
+        converted_month = "02";
+    else if (month == "Mar")
+        converted_month = "03";
+    else if (month == "Apr")
+        converted_month = "04";
+    else if (month == "May")
+        converted_month = "05";
+    else if (month == "Jun")
+        converted_month = "06";
+    else if (month == "Jul")
+        converted_month = "07";
+    else if (month == "Aug")
+        converted_month = "08";
+    else if (month == "Sep")
+        converted_month = "09";
+    else if (month == "Oct")
+        converted_month = "10";
+    else if (month == "Nov")
+        converted_month = "11";
+    else if (month == "Dec")
+        converted_month = "12";
+
+    var res = special_day.substring(special_day.length - 4) + "-" + converted_day + "-" + converted_month;
+}
 
 function CalendarApp(date) {
   
