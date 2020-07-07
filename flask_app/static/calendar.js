@@ -49,8 +49,6 @@ function processSpecialDay(special_day) {
       console.log('POST response: ');
       console.log(text);
     });
-
-    location.href = "day.html";
 }
 
 function CalendarApp(date) {
