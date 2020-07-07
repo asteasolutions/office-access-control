@@ -2,7 +2,7 @@ from flask import Flask, jsonify, request, render_template
 app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
-def chess():
+def main():
     return render_template("calendar.html")
 
 @app.route('/receiver', methods=['GET'])
