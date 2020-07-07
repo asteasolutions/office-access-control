@@ -1,0 +1,9 @@
+[DEFAULT]
+title = Astea
+
+[database]
+host = *Put your host here [usually 127.0.0.1]*
+user = *Username for database*
+pass = *Password for database*
+DBName = *Database name*
+driver = *Database driver: "ODBC+Driver+17+for+SQL+Server" for linux, "SQL+Server" for Windows*
