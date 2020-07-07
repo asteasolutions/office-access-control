@@ -49,8 +49,8 @@ function processSpecialDay(special_day) {
       console.log('POST response: ');
       console.log(text);
     });
-
-    location.href = "day.html";
+    
+    location.href = "http://127.0.0.1:5000/date";
 }
 
 function CalendarApp(date) {
