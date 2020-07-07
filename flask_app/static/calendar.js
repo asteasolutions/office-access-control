@@ -39,9 +39,7 @@ function processSpecialDay(special_day) {
         converted_month = "12";
 
     var res = special_day.substring(special_day.length - 4) + "-" + converted_day + "-" + converted_month;
-
-    $.post("receiver", res, function(){});
-    event.preventDefault();
+    alert(res);
 }
 
 function CalendarApp(date) {
@@ -205,8 +203,7 @@ function CalendarApp(date) {
     this.openDayWindow(dayDate);
   };
 
-  CalendarApp.prototype.openDayWindow = function(date){
-    
+  CalendarApp.prototype.openDayWindow = function(date) {
     var now = new Date();
     var day = new Date(date);
     this.dayViewDateEle.textContent = this.days[day.getDay()] + ", " + this.months[day.getMonth()] + " " + day.getDate() + ", " + day.getFullYear();
