@@ -1,8 +1,11 @@
-import pyodbc
-import sqlalchemy as sal
-from sqlalchemy import create_engine
+from database import DBConnection
 
-#Connecting to database and printing names of tables
-engine = sal.create_engine("mssql+pyodbc://sa:Strong_Password@localhost/CentaurEventTestCopy?driver=SQL+Server")
-conn = engine.connect()
-print(engine.table_names())
+
+
+result = DBConnection.engine.execute("select * from Events where [Event ID] = 1")
+for row in result:
+    print("Time:", row['Field Time'])
+
+
+print(DBConnection.engine)
+
