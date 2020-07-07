@@ -35,9 +35,11 @@ Windows:
 	echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
 	source ~/.bashrc
 
-4. In the file database.py change 
-	engine = sal.create_engine("mssql+pyodbc://sa:password@localhost/CentaurEventTestCopy?driver=ODBC+Driver+17+for+SQL+Server")
-	to 
-	engine = sal.create_engine("mssql+pyodbc://sa:password@localhost/CentaurEventTestCopy?driver=SQL+Server"), 
-	where password is your db connection password
+4. In the file config.example change the file name to config.ini
+	Change host, username, password and DBName.
+	For driver change:
+	ODBC+Driver+17+for+SQL+Server for Linux
+	and
+	SQL+Server for Windows 
+	
 	
