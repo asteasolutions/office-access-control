@@ -40,8 +40,11 @@ function processSpecialDay(special_day) {
 
     var res = special_day.substring(special_day.length - 4) + "-" + converted_month + "-" + converted_day;
 
+<<<<<<< HEAD
     
 
+=======
+>>>>>>> 43f1748a93b65152f1040d8a823734f19a5681b4
     location.href = "http://127.0.0.1:5000/date?res=" + res;
 }
 
