@@ -66,23 +66,16 @@
   <div class="container-fluid" data-aos="fade" data-aos-delay="500">
     <div class="swiper-container images-carousel">
         <div class="swiper-wrapper">
+        <div style="height:28em; width: 30em;;overflow:auto;border:8px solid gray;padding:2%; margin-right: 1.5em;">
+        {{ event_date }} <br> {{ event_date }} <br> {{ event_date }} 
+        </div>
+        
             <div class="swiper-slide">
               <div class="image-wrap">
                 <div class="image-info">
-                  <h2 class="mb-3">Total cards validated: 500</h2>
+                  <h2 class="mb-3">Total cards validated: {{ cards_count }}</h2>
                 </div>
                 <img src="../static/images/img_1.jpg" alt="Image">
-              </div>
-            </div>
-            <div style="height:28em; width: 30em;;overflow:auto;border:8px solid gray;padding:2%; margin-right: 1.5em;">
-            {{ event_date }}
-            </div>
-            <div class="swiper-slide">
-              <div class="image-wrap">
-                <div class="image-info">
-                  <h2 class="mb-3">People</h2>
-                </div>
-                <img src="../static/images/img_3.jpg" alt="Image">
               </div>
             </div>
 
