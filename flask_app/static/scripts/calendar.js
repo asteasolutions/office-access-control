@@ -43,6 +43,15 @@ function processSpecialDay(special_day) {
     location.href = "http://127.0.0.1:5000/date?res=" + res;
 }
 
+function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+
 function CalendarApp(date) {
   
     if (!(date instanceof Date)) {
