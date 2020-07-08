@@ -1,4 +1,5 @@
 from flask import Flask, jsonify, request, render_template, redirect, url_for
+from ..database_connection.event import Event
 
 app = Flask(__name__)
 # app.config['SEND_FILE_MAX_AGE_DEFAULT']
@@ -11,8 +12,9 @@ def main():
 @app.route('/date', methods=['GET'])
 def date():
     clicked_date = request.args['res']
+    cardsFound = Event.get_by_date(clicked_date)
     print(clicked_date)
-    return render_template("day.html", date=clicked_date)
+    return render_template("day.html", date=clicked_date, cardsCount = len(cardsFound), cards = cardsFound)
 
 @app.route('/real_time', methods=['GET', 'POST'])
 def real_time():
