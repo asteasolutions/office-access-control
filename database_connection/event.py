@@ -1,7 +1,7 @@
-from database import DBConnection
+from .database import DBConnection
 from sqlalchemy.sql import select
 from sqlalchemy import cast, Date
-from db_modules import Events, Event_Names, Record_Names, Card_Holder
+from .db_modules import Events, Event_Names, Record_Names, Card_Holder
 
 
 class Event(object):
