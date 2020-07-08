@@ -38,19 +38,14 @@ function processSpecialDay(special_day) {
     else if (month == "Dec")
         converted_month = "12";
 
-    var res = special_day.substring(special_day.length - 4) + "-" + converted_day + "-" + converted_month;
+    var res = special_day.substring(special_day.length - 4) + "-" + converted_month + "-" + converted_day;
 
-    fetch('/receiver', {
-	    method: 'POST',
-	    body: JSON.stringify(res)
-	  }).then(function (response) {
-      return response.text();
-    }).then(function (text) {
-      console.log('POST response: ');
-      console.log(text);
-    });
+<<<<<<< HEAD
     
-    location.href = "http://127.0.0.1:5000/date";
+
+=======
+>>>>>>> 43f1748a93b65152f1040d8a823734f19a5681b4
+    location.href = "http://127.0.0.1:5000/date?res=" + res;
 }
 
 function CalendarApp(date) {
