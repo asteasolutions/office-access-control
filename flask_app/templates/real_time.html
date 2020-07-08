@@ -1,108 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Information for current day</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Live-event info</title>
 
-    <link rel="stylesheet" href="../static/styles/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,900" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="../static/styles/styles.css" rel="stylesheet" type="text/css">
+  <link href="../static/styles/custom-responsive-styles.css" rel="stylesheet" type="text/css">
+  
+  <script type="text/javascript" src="../static/scripts/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="../static/scripts/all-plugins.js"></script>
+  <script type="text/javascript" src="../static/scripts/plugins-activate.js"></script>
+</head>
 
-    <link rel="stylesheet" href="../static/styles/magnific-popup.css">
-
-    <link rel="stylesheet" href="../static/styles/jquery-ui.css">
-
-    <link rel="stylesheet" href="../static/styles/lightgallery.min.css">    
-
-    <link rel="stylesheet" href="../static/styles/swiper.css">
-
-    <link rel="stylesheet" href="../static/styles/aos.css">
-
-    <link rel="stylesheet" href="../static/styles/style.css">
-
-  </head>
-  <body>
-
-  <div class="site-wrap">
-
-    <div class="site-mobile-menu">
-      <div class="site-mobile-menu-header">
-        <div class="site-mobile-menu-close mt-3">
-          <span class="icon-close2 js-menu-toggle"></span>
-        </div>
-      </div>
-      <div class="site-mobile-menu-body"></div>
+<body id="page-top">
+  <a class="menu-toggle rounded" href="#">
+    <i class="fa fa-bars"></i>
+  </a>
+  <nav id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+      <li class="sidebar-brand">
+        <a class="smooth-scroll" href="#Header"></a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="smooth-scroll" href="http://127.0.0.1:5000/">Home</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="smooth-scroll" href="http://127.0.0.1:5000/">Calendar</a>
+      </li>
+    </ul>
+  </nav>
+  <!-- Header Starts -->
+  <section id="Banner" class="content-section">
+    <div class="container content-wrap text-center">
+      <h1>Real Time Event Information</h1>
+      <h3>
+          <em>Card validations, time-stamps - everything is live.</em>
+        </h3>
+      <a class="btn btn-primary btn-xl smooth-scroll" href="#About">Find Out More</a>
     </div>
-
-
-
-
-    <header class="site-navbar py-3" role="banner">
-
-      <div class="container-fluid">
-        <div class="row align-items-center">
-
-          <div class="col-6 col-xl-2" data-aos="fade-down">
-            <h2>Real-time</h2>
-            <p>All the information</p>
+    <div class="overlay"></div>
+  </section>
+  <!-- Header Ends -->
+  <!-- About Us Starts -->
+  <section id="About" class="content-section">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="block-heading">
+            <h2>We will have some info here</h2>
           </div>
-          <div class="col-10 col-md-8 d-none d-xl-block" data-aos="fade-down">
-            <nav class="site-navigation position-relative text-right text-lg-center" role="navigation">
-
-              <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="calendar.html">Calendar</a></li>
-                
-              </ul>
-            </nav>
-          </div>
+          <p class="lead">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
         </div>
       </div>
-
-    </header>
-
-
-
-  <div class="container-fluid" data-aos="fade" data-aos-delay="500">
-    <div class="swiper-container images-carousel">
-        <div class="swiper-wrapper">
-        <div style="height:28em; width: 30em;;overflow:auto;border:8px solid gray;padding:2%; margin-right: 1.5em;">
-        {{ event_date }} <br> {{ event_date }} <br> {{ event_date }} 
-        </div>
-        
-            <div class="swiper-slide">
-              <div class="image-wrap">
-                <div class="image-info">
-                  <h2 class="mb-3">Total cards validated: {{ cards_count }}</h2>
-                </div>
-                <img src="../static/images/img_1.jpg" alt="Image">
+    </div>
+  </section>
+  <!-- About Us Starts -->
+  <section id="Services" class="content-section text-center">
+    <div class="container">
+      <div class="block-heading">
+        <h2>Bonus statistics</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      </div>
+      <div class="row">
+        <div class="col-md-3 col-sm-6">
+          <div class="service-box">
+            <div class="service-icon yellow">
+              <div class="front-content">
+                <i class="fa fa-globe" aria-hidden="true"></i>
+                <h3>Event location</h3>
               </div>
             </div>
-
+            <div class="service-content">
+              <h3>Club 33</h3>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="service-box">
+            <div class="service-icon orange">
+              <div class="front-content">
+                <i class="fa fa-suitcase"></i>
+                <h3>Event type</h3>
+              </div>
+            </div>
+            <div class="service-content">
+              <h3>Business meeting</h3>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="service-box ">
+            <div class="service-icon red">
+              <div class="front-content">
+                <i class="fa fa-male" aria-hidden="true"></i>
+                <h3>Live card counter</h3>
+              </div>
+            </div>
+            <div class="service-content">
+              <h3>Counter: 33</h3>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="service-box">
+            <div class="service-icon grey">
+              <div class="front-content">
+                <i class="fa fa-users"></i>
+                <h3>Participants</h3>
+              </div>
+            </div>
+            <div class="service-content">
+              <h3>Astea boys</h3>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-
+  </section>
   
+  <footer class="footer text-center">
+   
+      <p class="text-muted small mb-0">Copyright © Your Website 2018</p>
+      <p class="text-muted small mb-0">Designed by Position2 && Astea Boys</p>
+    </div>
+  </footer>
+</body>
 
-  </div>
-
-  <script src="../static/scripts/jquery-3.3.1.min.js"></script>
-  <script src="../static/scripts/jquery-migrate-3.0.1.min.js"></script>
-  <script src="../static/scripts/jquery-ui.js"></script>
-  <script src="../static/scripts/popper.min.js"></script>
-  <script src="../static/scripts/bootstrap.min.js"></script>
-  <script src="../static/scripts/owl.carousel.min.js"></script>
-  <script src="../static/scripts/jquery.stellar.min.js"></script>
-  <script src="../static/scripts/jquery.countdown.min.js"></script>
-  <script src="../static/scripts/jquery.magnific-popup.min.js"></script>
-  <script src="../static/scripts/bootstrap-datepicker.min.js"></script>
-  <script src="../static/scripts/swiper.min.js"></script>
-  <script src="../static/scripts/aos.js"></script>
-  <script src="../static/scripts/picturefill.min.js"></script>
-  <script src="../static/scripts/lightgallery-all.min.js"></script>
-  <script src="../static/scripts/jquery.mousewheel.min.js"></script>
-
-  <script src="../static/scripts/main.js"></script>
-
-  </body>
-</html> 
+</html>
