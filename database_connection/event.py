@@ -1,4 +1,7 @@
-from .database import DBConnection
+from database import DBConnection
+from sqlalchemy.sql import select
+from sqlalchemy import cast, Date
+from db_modules import Events, Event_Names, Record_Names, Card_Holder
 
 
 class Event(object):
@@ -33,65 +36,70 @@ class Event(object):
 
     @staticmethod
     def get_by_id(id):
-        
-        result = DBConnection.engine.execute(
-            '''select [Event ID], [Event Names].Name as EventName, [Field Time], [Card Number], [Record Names].Name from Events
-            left join [Event Names] on Events.[Event Type] = [Event Names].[Event Type]
-            left join [Card Holder Names] on Events.[Card Holder ID] = [Card Holder Names].[Card Holder ID]
-            left join [Record Names] on Events.[Record Name ID] = [Record Names].[Record Name ID]
-            where [Event ID] = {}
-            '''.format(id))
+        result = select([Events.id, Event_Names.name, Events.field_time, Card_Holder.card_num, Record_Names.name]).select_from(Events.__table__
+            .join(Event_Names,Event_Names.event_type.like(Events.event_type))
+            .join(Card_Holder,Card_Holder.id.like(Events.card_holder_id))
+            .join(Record_Names,Record_Names.record_name_id.like(Events.record_name_id))).where(Events.id == id)
 
-        return Event.create_object_arr_by_result(result)
-        
+        rs = DBConnection.engine.execute(result)
+        events = []
+        for row in rs:
+            events.append(Event(*row))
+        return events
 
     @staticmethod
     def get_by_name(name):
-        result = DBConnection.engine.execute(
-            '''select [Event ID], [Event Names].Name as EventName, [Field Time], [Card Number], [Record Names].Name from Events
-            left join [Event Names] on Events.[Event Type] = [Event Names].[Event Type]
-            left join [Card Holder Names] on Events.[Card Holder ID] = [Card Holder Names].[Card Holder ID]
-            left join [Record Names] on Events.[Record Name ID] = [Record Names].[Record Name ID]
-            where [Event Names].Name = '{}'
-            '''.format(name))
+        result = select([Events.id, Event_Names.name, Events.field_time, Card_Holder.card_num, Record_Names.name]).select_from(Events.__table__
+            .join(Event_Names,Event_Names.event_type.like(Events.event_type))
+            .join(Card_Holder,Card_Holder.id.like(Events.card_holder_id))
+            .join(Record_Names,Record_Names.record_name_id.like(Events.record_name_id))).where(Event_Names.name == name)
 
-        return Event.create_object_arr_by_result(result)
+        rs = DBConnection.engine.execute(result)
+        events = []
+        for row in rs:
+            events.append(Event(*row))
+        return events
 
     @staticmethod
     def get_by_date(date):
-        result = DBConnection.engine.execute(
-            '''select [Event ID], [Event Names].Name as EventName, [Field Time], [Card Number], [Record Names].Name from Events
-            left join [Event Names] on Events.[Event Type] = [Event Names].[Event Type]
-            left join [Card Holder Names] on Events.[Card Holder ID] = [Card Holder Names].[Card Holder ID]
-            left join [Record Names] on Events.[Record Name ID] = [Record Names].[Record Name ID]
-            WHERE CONVERT(DATE, [Field Time]) = '{}'
-            '''.format(date))
+        result = select([Events.id, Event_Names.name, Events.field_time, Card_Holder.card_num, Record_Names.name]).select_from(Events.__table__
+            .join(Event_Names,Event_Names.event_type.like(Events.event_type))
+            .join(Card_Holder,Card_Holder.id.like(Events.card_holder_id))
+            .join(Record_Names,Record_Names.record_name_id.like(Events.record_name_id))).where(cast(Events.field_time, Date) == date)
 
-        return Event.create_object_arr_by_result(result)
+        rs = DBConnection.engine.execute(result)
+        events = []
+        for row in rs:
+            events.append(Event(*row))
+        return events
+
+        
 
     @staticmethod
     def get_by_card_num(card_num):
-        result = DBConnection.engine.execute(
-            '''select [Event ID], [Event Names].Name as EventName, [Field Time], [Card Number], [Record Names].Name from Events
-            left join [Event Names] on Events.[Event Type] = [Event Names].[Event Type]
-            left join [Card Holder Names] on Events.[Card Holder ID] = [Card Holder Names].[Card Holder ID]
-            left join [Record Names] on Events.[Record Name ID] = [Record Names].[Record Name ID]
-            where [Card Number] = '{}'
-            '''.format(card_num))
+        result = select([Events.id, Event_Names.name, Events.field_time, Card_Holder.card_num, Record_Names.name]).select_from(Events.__table__
+            .join(Event_Names,Event_Names.event_type.like(Events.event_type))
+            .join(Card_Holder,Card_Holder.id.like(Events.card_holder_id))
+            .join(Record_Names,Record_Names.record_name_id.like(Events.record_name_id))).where(Card_Holder.card_num == card_num)
 
-        return Event.create_object_arr_by_result(result)
+        rs = DBConnection.engine.execute(result)
+        events = []
+        for row in rs:
+            events.append(Event(*row))
+        return events
 
     @staticmethod
     def get_by_record_name(record_name):
-        result = DBConnection.engine.execute(
-            '''select [Event ID], [Event Names].Name as EventName, [Field Time], [Card Number], [Record Names].Name from Events
-            left join [Event Names] on Events.[Event Type] = [Event Names].[Event Type]
-            left join [Card Holder Names] on Events.[Card Holder ID] = [Card Holder Names].[Card Holder ID]
-            left join [Record Names] on Events.[Record Name ID] = [Record Names].[Record Name ID]
-            where [Record Names].Name = '{}'
-            '''.format(record_name))
+        result = select([Events.id, Event_Names.name, Events.field_time, Card_Holder.card_num, Record_Names.name]).select_from(Events.__table__
+            .join(Event_Names,Event_Names.event_type.like(Events.event_type))
+            .join(Card_Holder,Card_Holder.id.like(Events.card_holder_id))
+            .join(Record_Names,Record_Names.record_name_id.like(Events.record_name_id))).where(Record_Names.name == record_name)
 
-        return Event.create_object_arr_by_result(result)
+        rs = DBConnection.engine.execute(result)
+        events = []
+        for row in rs:
+            events.append(Event(*row))
+        return events
             
 
 
