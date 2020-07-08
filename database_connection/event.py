@@ -1,4 +1,4 @@
-from database import DBConnection
+from .database import DBConnection
 
 
 class Event(object):
