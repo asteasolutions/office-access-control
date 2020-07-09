@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, request, render_template, redirect, url_for
 from ..database_connection.event import Event
+import datetime
 
 app = Flask(__name__)
 # app.config['SEND_FILE_MAX_AGE_DEFAULT']
@@ -23,7 +24,15 @@ def date():
 
 @app.route('/real_time', methods=['GET', 'POST'])
 def real_time():
-    return render_template("real_time.html", event_date = "03.33.33")
+    date = str(datetime.datetime.today()).split(' ')
+    today = date[0]
+    cardsFound = Event.get_access_granted_in_date(today)
+    cardsFound.sort(key = sortBy)
+    for card in cardsFound:
+        hours = str(card.eventTime).split(' ')
+        card.eventTime = hours[1]
+    print(today)
+    return render_template("real_time.html", event_date = today, date=today, cardsCount = Event.get_count_in_date(today), cards = cardsFound)
 
 def sortBy(card):
     return card.eventTime
