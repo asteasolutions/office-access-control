@@ -25,6 +25,8 @@ from db_modules import Events, Event_Names, Record_Names, Card_Holder
 #     i.print_event()
 
 print(Event.get_count_in_date('2019-11-11'))
+print(Event.get_left_count_in_date('2019-11-11'))
+print()
 
 
 
