@@ -21,9 +21,10 @@ from db_modules import Events, Event_Names, Record_Names, Card_Holder
 
 
 
-for i in Event.get_by_date('2019-11-11'):
-    i.print_event()
+# for i in Event.get_count_in_date('2019-11-11'):
+#     i.print_event()
 
+print(Event.get_count_in_date('2019-11-11'))
 
 
 

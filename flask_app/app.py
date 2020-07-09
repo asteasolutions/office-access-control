@@ -12,9 +12,9 @@ def main():
 @app.route('/date', methods=['GET'])
 def date():
     clicked_date = request.args['res']
-    cardsFound = Event.get_by_date(clicked_date)
+    cardsFound = Event.get_access_granted_in_date(clicked_date)
     print(clicked_date)
-    return render_template("day.html", date=clicked_date, cardsCount = len(cardsFound), cards = cardsFound)
+    return render_template("day.html", date=clicked_date, cardsCount = Event.get_count_in_date(clicked_date), cards = cardsFound)
 
 @app.route('/real_time', methods=['GET', 'POST'])
 def real_time():
