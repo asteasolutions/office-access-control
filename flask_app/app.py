@@ -2,13 +2,14 @@ from flask import Flask, jsonify, request, render_template, redirect, url_for
 from ..database_connection.event import Event
 
 app = Flask(__name__)
+app.debug = True
 # app.config['SEND_FILE_MAX_AGE_DEFAULT']
 clicked_date = ""
 
 
 @app.route('/', methods=['GET'])
 def main():
-    return render_template("calendar.html")
+    return render_template("home.html")
 
 @app.route('/date', methods=['GET'])
 def date():
@@ -24,6 +25,10 @@ def date():
 @app.route('/real_time', methods=['GET', 'POST'])
 def real_time():
     return render_template("real_time.html", event_date = "03.33.33")
+
+@app.route('/calendar', methods=['GET', 'POST'])
+def calendar():
+    return render_template("calendar.html")
 
 def sortBy(card):
     return card.eventTime
