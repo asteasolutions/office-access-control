@@ -3,13 +3,14 @@ from ..database_connection.event import Event
 import datetime
 
 app = Flask(__name__)
+app.debug = True
 # app.config['SEND_FILE_MAX_AGE_DEFAULT']
 clicked_date = ""
 
 
 @app.route('/', methods=['GET'])
 def main():
-    return render_template("calendar.html")
+    return render_template("home.html")
 
 @app.route('/date', methods=['GET'])
 def date():
@@ -34,6 +35,10 @@ def real_time():
         card.eventTime = hours[1]
     print(today)
     return render_template("real_time.html", event_date = today, date=today, cardsCount = Event.get_count_in_date(today), cards = cardsFound, peoplePresent = peoplePresent)
+
+@app.route('/calendar', methods=['GET', 'POST'])
+def calendar():
+    return render_template("calendar.html")
 
 def sortBy(card):
     return card.eventTime
