@@ -558,3 +558,47 @@ footer.footer p.small a:hover, footer.footer p.small a.focus {
 	text-transform: none;
 }
 /* Styles Begins */
+
+
+@media screen and (min-width: 1200px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+
+li {
+  display: inline;
+}
+
+#nav-home {
+  font-family: Arial;
+  font-size: 1.4em;
+  color: #20c997;
+  margin-right:1em;
+  text-decoration: none;
+}
+
+#nav-calendar {
+  font-family: Arial;
+  font-size: 1.4em;
+  color:black;
+  margin-right:1em;
+  text-decoration: none;
+}
+
+#nav-calendar:hover {
+  transition: color .2s ease-in;
+  color: #20c997;
+}
+
+#nav-real-time {
+  font-family: Arial;
+  font-size: 1.4em;
+  color:black;
+  text-decoration: none;
+}
+
+#nav-real-time:hover {
+  transition: color .2s ease-in;
+  color: #20c997;
+}
