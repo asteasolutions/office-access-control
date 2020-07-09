@@ -102,6 +102,35 @@ class Event(object):
         return events
             
 
+    @staticmethod
+    def get_access_granted_in_date(date):
+        result = select([Events.id, Event_Names.name, Events.field_time, Card_Holder.card_num, Record_Names.name]).select_from(Events.__table__
+            .join(Event_Names,Event_Names.event_type.like(Events.event_type))
+            .join(Card_Holder,Card_Holder.id.like(Events.card_holder_id))
+            .join(Record_Names,Record_Names.record_name_id.like(Events.record_name_id))).where(cast(Events.field_time, Date) == date)
+
+        rs = DBConnection.engine.execute(result)
+        events = []
+        for row in rs:
+            if(row[1] == 'Access granted'):
+                events.append(Event(*row))
+        return events
+
+
+    @staticmethod
+    def get_count_in_date(date):
+        result = select([Events.id, Event_Names.name, Events.field_time, Card_Holder.card_num, Record_Names.name]).select_from(Events.__table__
+            .join(Event_Names,Event_Names.event_type.like(Events.event_type))
+            .join(Card_Holder,Card_Holder.id.like(Events.card_holder_id))
+            .join(Record_Names,Record_Names.record_name_id.like(Events.record_name_id))).where(cast(Events.field_time, Date) == date)
+
+        rs = DBConnection.engine.execute(result)
+        count = 0
+        for row in rs:
+            if(row[1] == 'Access granted'):
+                count+=1
+        return count
+
 
 
 
