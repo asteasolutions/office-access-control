@@ -39,11 +39,12 @@
 
 
 @media screen and (min-width: 768px) {
-  .topnav { display: none;}
+  .topnav { display: none; }
   }
 
   @media screen and (max-width: 768px) {
     #main-nav { display: none;}
+    #text { display: none; }
   }
   
   .topnav {
@@ -542,4 +543,40 @@ input.add-event-edit:-ms-input-placeholder {
   cursor: pointer;
   padding: 2px 5px;
   border-bottom: 1px solid #fff;
+}
+
+#text {
+  margin-left: 2em;
+}
+
+a {
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#nav-home {
+  font-size:0.5em;
+}
+
+#nav-home {
+  font-size:0.5em;
+}
+
+#nav-home:hover {
+  transition: color .2s ease-in;
+  color: #20c997;
+}
+
+#nav-calendar {
+  font-size:0.5em;
+  color: #20c997;
+}
+
+#nav-real-time {
+  font-size:0.5em;
+}
+
+#nav-real-time:hover {
+  transition: color .2s ease-in;
+  color: #20c997;
 }
