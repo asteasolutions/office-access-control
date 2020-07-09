@@ -24,9 +24,11 @@ from db_modules import Events, Event_Names, Record_Names, Card_Holder
 # for i in Event.get_count_in_date('2019-11-11'):
 #     i.print_event()
 
-print(Event.get_count_in_date('2019-11-11'))
-print(Event.get_left_count_in_date('2019-11-11'))
-print()
+# print(Event.get_count_in_date('2019-11-11'))
+# print(Event.get_left_count_in_date('2019-11-11'))
+# print()
 
+
+Event.make_graph_from_to('2019-11-4', '2019-11-11')
 
 
