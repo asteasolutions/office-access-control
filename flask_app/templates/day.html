@@ -69,35 +69,34 @@
 
 
   <div class="container-fluid" data-aos="fade" data-aos-delay="500">
-    <div class="swiper-container images-carousel">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="image-wrap">
-                <div class="image-info">
-                  <h2 class="mb-3">Total cards validated: {{ cardsCount }}</h2>
-                </div>
-                <img src="../static/images/img_1.jpg" alt="Image">
-              </div>
-            </div>
-            <div class="swiper-slide">
-            <div style="height:28em; width: 27em;;overflow:auto;border:8px solid gray;padding:2%;">
-              Date: {{ date }}<br>
-              {% for card in cards %}
-              <li><p>{{ card.cardNumber }}  - {{ card.eventType }}  - {{ card.recordName }}</p></li>
-              {% endfor %}
-            </div>
+      <div class="row">
+        <div class="column">
+          <div class="image-info">
+            <h2 class="mb-3">Total cards validated: {{ cardsCount }}</h2>
           </div>
-            <div class="swiper-slide">
-              <div class="image-wrap">
-                <div class="image-info">
-                  <h2 class="mb-3">People</h2>
-                </div>
-                <img src="../static/images/img_3.jpg" alt="Image">
+          <img src="../static/images/img_1.jpg" alt="Image" width="100%">
+        </div>
+        <div class="column">
+          <div style="height:28em; width: 100%;;overflow:auto;border:8px solid gray;padding:2%;">
+            Date: {{ date }}
+            <hr>
+            {% for card in cards %}
+            <li><p id="card-id">Card ID: {{ card.cardNumber }}</p></li>
+            <li><p>Event: {{ card.eventType }} - {{ card.recordName }}</p></li>
+            <li><p>Time: {{ card.eventTime }} </p></li>
+            <hr>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="column">
+          <div class="image-info">
+              <h2 class="mb-3">People</h2>
+          </div>
+              <img src="../static/images/img_3.jpg" alt="Image" width="100%">
               </div>
-            </div>
-
+        </div>
+      </div>
     </div>
-  </div>
 
   <div class="footer">
     <div class="container-fluid">
