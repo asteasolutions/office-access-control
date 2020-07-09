@@ -1,7 +1,9 @@
-from .database import DBConnection
+from database import DBConnection
 from sqlalchemy.sql import select
 from sqlalchemy import cast, Date
-from .db_modules import Events, Event_Names, Record_Names, Card_Holder
+from db_modules import Events, Event_Names, Record_Names, Card_Holder
+import matplotlib.pyplot as plt
+from datetime import date, timedelta
 
 
 class Event(object):
@@ -145,6 +147,44 @@ class Event(object):
             if(row[1] == 'Request to exit granted'):
                 count+=1
         return count
+
+
+    def make_graph_from_to(start, end):
+        st = start.split('-')
+        en = end.split('-')
+        for i in range(0, len(st)): 
+            st[i] = int(st[i]) 
+            en[i] = int(en[i])
+        sdate = date(*st)
+        edate = date(*en)
+        delta = edate - sdate       # as timedelta
+        days = []
+        cards_count = []
+        for i in range(delta.days + 1):
+            day = sdate + timedelta(days=i)
+            days.append(day)
+            cards_count.append(Event.get_count_in_date(day))
+
+
+        # plt.plot(days, cards_count) 
+        # plotting a bar chart 
+        plt.bar(days, cards_count,tick_label = days, 
+                width = 0.8, color = ['blue', 'green'])
+  
+        # naming the x axis 
+        plt.xlabel('Days') 
+        # naming the y axis 
+        plt.ylabel('Cards for last week') 
+        
+        # giving a title to my graph 
+        plt.title('Cards by days') 
+        
+        # function to show the plot 
+        # plt.show() 
+
+        plt.savefig('images/cards_for_week.png')
+        
+        
 
 
 
