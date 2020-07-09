@@ -28,11 +28,12 @@ def real_time():
     today = date[0]
     cardsFound = Event.get_access_granted_in_date(today)
     cardsFound.sort(key = sortBy)
+    peoplePresent = Event.get_count_in_date(today) - Event.get_left_count_in_date(today)
     for card in cardsFound:
         hours = str(card.eventTime).split(' ')
         card.eventTime = hours[1]
     print(today)
-    return render_template("real_time.html", event_date = today, date=today, cardsCount = Event.get_count_in_date(today), cards = cardsFound)
+    return render_template("real_time.html", event_date = today, date=today, cardsCount = Event.get_count_in_date(today), cards = cardsFound, peoplePresent = peoplePresent)
 
 def sortBy(card):
     return card.eventTime
