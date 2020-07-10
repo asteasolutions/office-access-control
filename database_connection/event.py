@@ -1,7 +1,7 @@
-from database import DBConnection
+from .database import DBConnection
 from sqlalchemy.sql import select
 from sqlalchemy import cast, Date
-from db_modules import Events, Event_Names, Record_Names, Card_Holder
+from .db_modules import Events, Event_Names, Record_Names, Card_Holder
 import matplotlib.pyplot as plt
 from datetime import date, timedelta
 
@@ -168,6 +168,7 @@ class Event(object):
 
         # plt.plot(days, cards_count) 
         # plotting a bar chart 
+        plt.figure(figsize=(20, 10))
         plt.bar(days, cards_count,tick_label = days, 
                 width = 0.8, color = ['blue', 'green'])
   
@@ -181,7 +182,6 @@ class Event(object):
         
         # function to show the plot 
         # plt.show() 
-
         plt.savefig('images/cards_for_week.png')
         
         
