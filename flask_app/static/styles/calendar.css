@@ -57,13 +57,19 @@
   }
 
   .topnav a {
+    font-family: Arial;
     color: black;
     background-color: rgb(255, 255, 255);
     font-size: 30px;
+    margin: 5px;
+    text-decoration: none;
   }
   
   .topnav #myLinks {
     display: none;
+    margin-left: 20px;
+    font-size: 40px;
+    position: relative;
   }
   
   .topnav a:hover {
@@ -552,39 +558,9 @@ input.add-event-edit:-ms-input-placeholder {
 
 a {
   text-decoration: none;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial;
 }
 
 li a {
   font-size: 18px;
-}
-
-#nav-home {
-  font-size:0.5em;
-}
-
-#nav-home {
-  font-size:0.5em;
-  margin-left: 1em;
-  margin-right: 1em;
-}
-
-#nav-home:hover {
-  transition: color .2s ease-in;
-  color: #20c997;
-}
-
-#nav-calendar {
-  font-size:0.5em;
-  color: #20c997;
-  margin-right: 1em;
-}
-
-#nav-real-time {
-  font-size:0.5em;
-}
-
-#nav-real-time:hover {
-  transition: color .2s ease-in;
-  color: #20c997;
 }

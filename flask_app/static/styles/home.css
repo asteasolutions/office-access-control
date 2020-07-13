@@ -46,14 +46,17 @@
     }
   
     .topnav a {
+      font-family: Arial;
       color: black;
       background-color: rgb(255, 255, 255);
+      margin: 5px;
       font-size: 30px;
       text-decoration: none;
     }
     
     .topnav #myLinks {
       display: none;
+      margin-left: 20px;
       position: relative;
     }
     
