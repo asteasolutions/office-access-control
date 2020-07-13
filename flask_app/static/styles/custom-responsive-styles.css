@@ -1,3 +1,14 @@
+ul {
+  margin-top: 25px;
+}
+
+li a {
+  font-family: Arial !important; 
+  font-size: 15px !important;
+  padding-right: 12px !important;
+}
+
+
 /*Extra small devices (portrait phones, less than 576px)*/
 @media (max-width: 575px) {
   .content-section {
