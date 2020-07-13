@@ -1300,3 +1300,18 @@ hr {
   background-color: #4CAF50;
   color: white;
 }
+
+@media (max-width: 1200px) {
+  .vertical-menu {
+    display: none;
+  }
+
+  .img-section {
+    display: none;
+  }
+
+  .container-info {
+    width: 20em;
+    margin: auto;
+  }
+}
