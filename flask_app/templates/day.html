@@ -21,7 +21,11 @@
     <link rel="stylesheet" href="../static/styles/day.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+<style>
+  .class-test {
+    display: none;
+  }
+</style>
 
   </head>
   <body>
@@ -72,6 +76,64 @@
       <div class="row">
         <div class="column">
           <div class="container">
+            <div class="vertical-menu">
+              <a class="active">Sort by</a>
+              <a id="option1" onclick="sortDate()">Date</a>
+              <a id="option2" onclick="sortCardNum()" >Card num</a>
+              <a id="option3" onclick="sortAll()">All events</a>
+              <a id="option4" onclick="sortRecordName()">Record name</a>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="container">
+          <div class="by-date" style="height:28em; width: 100%;;overflow:auto;border:8px solid gray;padding:2%; ">
+            Date: {{ date }}
+            <hr>
+            {% for card in cardsByDate %}
+              <li><p id="card-id">Card ID: {{ card.cardNumber }}</p></li>
+              <li><p>Event: {{ card.eventType }} - {{ card.recordName }}</p></li>
+              <li><p>Time: {{ card.eventTime }} </p></li>
+              <hr>
+            {% endfor %}
+          </div>
+          <div class="by-card-num" style="height:28em; width: 100%;;overflow:auto;border:8px solid gray;padding:2%; display: none;">
+            Date: {{ date }}
+            <hr>
+
+            {% for card in cardsByCardNum %}
+              <li><p id="card-id">Card ID: {{ card.cardNumber }}</p></li>
+              <li><p>Event: {{ card.eventType }} - {{ card.recordName }}</p></li>
+              <li><p>Time: {{ card.eventTime }} </p></li>
+              <hr>
+            {% endfor %}
+          </div>
+          <div class="by-all" style="height:28em; width: 100%;;overflow:auto;border:8px solid gray;padding:2%; display: none;">
+            Date: {{ date }}
+            <hr>
+
+            {% for card in cardsAll %}
+              <li><p id="card-id">Card ID: {{ card.cardNumber }}</p></li>
+              <li><p>Event: {{ card.eventType }} - {{ card.recordName }}</p></li>
+              <li><p>Time: {{ card.eventTime }} </p></li>
+              <hr>
+            {% endfor %}
+          </div>
+          <div class="by-record-name" style="height:28em; width: 100%;;overflow:auto;border:8px solid gray;padding:2%;  display: none;">
+            Date: {{ date }}
+            <hr>
+
+            {% for card in cardsByRecordName %}
+              <li><p id="card-id">Card ID: {{ card.cardNumber }}</p></li>
+              <li><p>Event: {{ card.eventType }} - {{ card.recordName }}</p></li>
+              <li><p>Time: {{ card.eventTime }} </p></li>
+              <hr>
+            {% endfor %}
+          </div>
+        </div>
+        </div>
+        <div class="column">
+          <div class="container">
             <img src="../static/images/img_1.jpg" alt="Image" width="100%">
             <div class="overlay">
               <div class="special-text">Total cards validated: {{ cardsCount }}</div>
@@ -79,19 +141,7 @@
             <div class="special-text">Total cards validated: {{ cardsCount }}</div>
           </div>
         </div>
-        <div class="column">
-          <div style="height:28em; width: 100%;;overflow:auto;border:8px solid gray;padding:2%;">
-            Date: {{ date }}
-            <hr>
-            {% for card in cards %}
-            <li><p id="card-id">Card ID: {{ card.cardNumber }}</p></li>
-            <li><p>Event: {{ card.eventType }} - {{ card.recordName }}</p></li>
-            <li><p>Time: {{ card.eventTime }} </p></li>
-            <hr>
-            {% endfor %}
-          </div>
-        </div>
-        <div class="column">
+        <!-- <div class="column">
           <div class="container">
             <img src="../static/images/img_3.jpg" alt="Image" width="100%">
             <div class="overlay">
@@ -99,7 +149,7 @@
             </div>
             <div class="special-text">People</div>
           </div>
-        </div>
+        </div> -->
         </div>
       </div>
     </div>
@@ -132,14 +182,47 @@
 
   <script>
   
+  let filter = 1;
+
   function myFunction() {
-  var x = document.getElementById("myLinks");
-  if (x.style.display === "block") {
-    x.style.display = "none";
-  } else {
-    x.style.display = "block";
+    var x = document.getElementById("myLinks");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
   }
-}
+  
+  function sortDate() {
+    document.getElementsByClassName('by-date')[0].style.display = 'block';
+    document.getElementsByClassName('by-card-num')[0].style.display = 'none';
+    document.getElementsByClassName('by-all')[0].style.display = 'none';
+    document.getElementsByClassName('by-record-name')[0].style.display = 'none';
+  }
+
+  function sortCardNum() {
+    document.getElementsByClassName('by-date')[0].style.display = 'none';
+    document.getElementsByClassName('by-card-num')[0].style.display = 'block';
+    document.getElementsByClassName('by-all')[0].style.display = 'none';
+    document.getElementsByClassName('by-record-name')[0].style.display = 'none';
+  }
+  
+  function sortAll() {
+    document.getElementsByClassName('by-date')[0].style.display = 'none';
+    document.getElementsByClassName('by-card-num')[0].style.display = 'none';
+    document.getElementsByClassName('by-all')[0].style.display = 'block';
+    document.getElementsByClassName('by-record-name')[0].style.display = 'none';
+  }
+  function sortRecordName() {
+    document.getElementsByClassName('by-date')[0].style.display = 'none';
+    document.getElementsByClassName('by-card-num')[0].style.display = 'none';
+    document.getElementsByClassName('by-all')[0].style.display = 'none';
+    document.getElementsByClassName('by-record-name')[0].style.display = 'block';
+  }
+
+
+
+
   </script>
 
   </body>
