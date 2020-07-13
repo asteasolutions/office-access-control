@@ -1,3 +1,8 @@
+#logo {
+  margin-left: 1%;
+  margin-top: 1%;
+}
+
 .site-wrap:before {
     -webkit-transition: .3s all ease-in-out;
     -o-transition: .3s all ease-in-out;
@@ -28,12 +33,18 @@
 }
   
   
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1000px) {
     .topnav { display: none;}
     }
   
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1000px) {
       #main-nav { display: none;}
+      #logo {
+        margin-top: 10%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
     }
     
     .topnav {
@@ -49,8 +60,8 @@
       font-family: Arial;
       color: black;
       background-color: rgb(255, 255, 255);
-      margin: 5px;
-      font-size: 30px;
+      margin: 0.5vw;
+      font-size: 5vw;
       text-decoration: none;
     }
     
@@ -74,7 +85,7 @@
     list-style-type: none;
     position: absolute;
     top: 0;
-    left: 40%;
+    left: 37%;
     margin: 0;
     padding: 30px;
     overflow: hidden;
@@ -102,23 +113,20 @@
     transition-delay: 0s
   }
   
-  /* h1 {
-    margin: 0%;
-    text-align: center;
-    font-size: 5em;
-    position: relative;
-  } */
+  h1 {
+    font-size: 1.5em;
+  }
   
   .text {
-    margin: 5%;
     text-align: center;
-    font-size: 35px;
-    padding: 20px;
+    font-size: 2em;
+    padding-top: 3%;
+    padding-bottom: 0%;
   }
 
   .graph {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 68%;
   }
