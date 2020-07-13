@@ -31,8 +31,15 @@
   <body>
 
     <div>
-      <img src="../static/images/Access Control Logo sizes/Access Control Logo sizes/Logo_Acces Control_Full-png.png" alt="Italian Trulli">
+      <img id="logo" src="../static/images/Access Control Logo sizes/Access Control Logo sizes/Logo_Acces Control_Full-png.png" alt="Italian Trulli">
     </div>
+
+    <ul id="main-nav">
+      <li class="main-nav-li"><a href="http://127.0.0.1:5000/">Home</a></li>
+      <li class="main-nav-li"><a href="http://127.0.0.1:5000/calendar">Calendar</a></li>
+      <li class="main-nav-li"><a href="http://127.0.0.1:5000/real_time">Real-time</a></li>
+    </ul>
+  
   <div class="site-wrap">
 
     <div class="mobile-container">
@@ -63,11 +70,6 @@
           <div class="col-10 col-md-8 d-none d-xl-block" data-aos="fade-down">
             <nav class="site-navigation position-relative text-right text-lg-center" role="navigation">
 
-              <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
-                <li><a href="http://127.0.0.1:5000/">Home</a></li>
-                <li><a href="http://127.0.0.1:5000/calendar">Calendar</a></li>
-                <li><a href="http://127.0.0.1:5000/real_time">Real-time</a></li>
-              </ul>
             </nav>
           </div>
         </div>
@@ -79,7 +81,7 @@
 
   <div class="container-fluid" data-aos="fade" data-aos-delay="500">
       <div class="row">
-        <div class="column">
+        <div id="menu1" class="column">
           <div class="container">
             <div class="vertical-menu">
               <a class="active">Sort by</a>
@@ -139,36 +141,20 @@
           </div>
         </div>
         </div>
-        <div class="column">
+        <div id="menu1" class="column">
           <div class="container">
             <div class="img-section">
-            <img src="../static/images/img_1.jpg" alt="Image" width="100%">
-            <div class="overlay">
+              <img src="../static/images/img_1.jpg" alt="Image" width="100%">
+              <div class="overlay">
+                <div class="special-text">Total cards validated: {{ cardsCount }}</div>
+              </div>
               <div class="special-text">Total cards validated: {{ cardsCount }}</div>
             </div>
-            <div class="special-text">Total cards validated: {{ cardsCount }}</div>
           </div>
         </div>
-        </div>
-        <!-- <div class="column">
-          <div class="container">
-            <img src="../static/images/img_3.jpg" alt="Image" width="100%">
-            <div class="overlay">
-              <div class="special-text">People</div>
-            </div>
-            <div class="special-text">People</div>
-          </div>
-        </div> -->
         </div>
       </div>
     </div>
-
-  <div class="footer">
-    <div class="container-fluid">
-      <p>Licensed by us</p>
-    </div>
-  </div>
-
   </div>
 
   <script src="../static/scripts/jquery-3.3.1.min.js"></script>
