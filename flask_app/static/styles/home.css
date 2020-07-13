@@ -115,3 +115,10 @@
     font-size: 35px;
     padding: 20px;
   }
+
+  .graph {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
