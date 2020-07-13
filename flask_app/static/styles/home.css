@@ -1,18 +1,4 @@
-.site-block-feature-7 .icon {
-    -webkit-transition: .2s all ease-in-out;
-    -o-transition: .2s all ease-in-out;
-    transition: .2s all ease-in-out;
-    position: relative;
-    -webkit-transform: scale(1);
-    -ms-transform: scale(1);
-    transform: scale(1); }
-  
-  .site-block-feature-7:hover .icon, .site-block-feature-7:focus .icon, .site-block-feature-7:active .icon {
-    -webkit-transform: scale(1.2);
-    -ms-transform: scale(1.2);
-    transform: scale(1.2); }
-  
-  .site-wrap:before {
+.site-wrap:before {
     -webkit-transition: .3s all ease-in-out;
     -o-transition: .3s all ease-in-out;
     transition: .3s all ease-in-out;
@@ -36,6 +22,10 @@
     .offcanvas-menu .site-wrap:before {
       opacity: 1;
       visibility: visible; }
+
+.icon {
+  position: relative;
+}
   
   
   @media screen and (min-width: 768px) {
@@ -56,13 +46,18 @@
     }
   
     .topnav a {
+      font-family: Arial;
       color: black;
       background-color: rgb(255, 255, 255);
+      margin: 5px;
       font-size: 30px;
+      text-decoration: none;
     }
     
     .topnav #myLinks {
       display: none;
+      margin-left: 20px;
+      position: relative;
     }
     
     .topnav a:hover {
@@ -91,7 +86,7 @@
   
   li a {
     font-family: Arial;
-    font-size: 15px;
+    font-size: 18px;
     display: block;
     color:rgb(77, 77, 77);
     text-align: center;
