@@ -33,11 +33,11 @@
 }
   
   
-  @media screen and (min-width: 1000px) {
+  @media screen and (min-width: 1100px) {
     .topnav { display: none;}
     }
   
-    @media screen and (max-width: 1000px) {
+    @media screen and (max-width: 1100px) {
       #main-nav { display: none;}
       #logo {
         margin-top: 10%;

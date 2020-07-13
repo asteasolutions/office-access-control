@@ -1,3 +1,10 @@
+#logo {
+  margin-left: 1.5%;
+  margin-top: 1.5%;
+  top: 0;
+  position: absolute;
+}
+
 .site-block-feature-7 .icon {
   -webkit-transition: .2s all ease-in-out;
   -o-transition: .2s all ease-in-out;
@@ -38,13 +45,26 @@
     visibility: visible; }
 
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1100px) {
   .topnav { display: none; }
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1100px) {
     #main-nav { display: none;}
     #text { display: none; }
+    #logo {
+      margin-top: 12vw;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      right: 0;
+      left: 0;
+    }
+    .calendar {
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+    }
   }
   
   .topnav {
@@ -60,8 +80,8 @@
     font-family: Arial;
     color: black;
     background-color: rgb(255, 255, 255);
-    font-size: 30px;
-    margin: 5px;
+    font-size: 4vw;
+    margin: 0.5vw;
     text-decoration: none;
   }
   
@@ -86,7 +106,7 @@ ul {
   list-style-type: none;
   position: absolute;
   top: 0;
-  left: 40%;
+  left: 37%;
   margin: 0;
   padding: 30px;
   overflow: hidden;
