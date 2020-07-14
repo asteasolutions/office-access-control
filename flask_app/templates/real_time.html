@@ -66,9 +66,9 @@
             <div style="height:28em; width: 100%;;overflow:auto;border:8px solid gray;padding:2%;">
               <hr>
               {% for card in cards %}
-              <li><p id="card-id">Card ID: {{ card.cardNumber }}</p></li>
-              <li><p>Event: {{ card.eventType }} - {{ card.recordName }}</p></li>
-              <li><p>Time: {{ card.eventTime }} </p></li>
+              <p id="card-id">Card ID: {{ card.cardNumber }}</p>
+              <p>Event: {{ card.eventType }} - {{ card.recordName }}</p>
+              <p>Time: {{ card.eventTime }} </p>
               <hr>
               {% endfor %}
             </div>
