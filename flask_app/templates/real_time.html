@@ -59,16 +59,16 @@
     <div class="container text-center">
       <div class="row">
         <div class="col-lg-12">
-          <div class="block-heading" style="margin-top: 5%;">
+          <div id="date" class="block-heading" style="margin-top: 5%;">
             <h2>Date: {{ date }}</h2>
           </div>
           <div class="column">
             <div style="height:28em; width: 100%;;overflow:auto;border:8px solid gray;padding:2%;">
               <hr>
               {% for card in cards %}
-              <li><p id="card-id">Card ID: {{ card.cardNumber }}</p></li>
-              <li><p>Event: {{ card.eventType }} - {{ card.recordName }}</p></li>
-              <li><p>Time: {{ card.eventTime }} </p></li>
+              <p id="card-id">Card ID: {{ card.cardNumber }}</p>
+              <p>Event: {{ card.eventType }} - {{ card.recordName }}</p>
+              <p>Time: {{ card.eventTime }} </p>
               <hr>
               {% endfor %}
             </div>
@@ -79,7 +79,7 @@
     </div>
   </section>
   <!-- About Us Starts -->
-  <section id="Services" class="content-section text-center">
+  <section id="Services" class="content-section text-center" style="margin-top: 0 !important; padding-top: 0 !important;">
     <div class="container">
       <div class="block-heading">
         <h2>Bonus statistics</h2>
